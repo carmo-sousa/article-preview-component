@@ -10,6 +10,14 @@ html, body {
   width: 100%;
 }
 
+@keyframes animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   background-color: #ecf2f8;
 }
@@ -25,15 +33,19 @@ body .root .card {
   height: 280px;
   background-color: #ffffff;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 285px 1fr;
+  position: relative;
 }
 body .root .card .card-image {
   width: 285px;
-  height: 280px;
+  height: 100%;
   grid-area: "image";
+}
+body .root .card .card-image img {
+  width: 100%;
+  height: 100%;
 }
 body .root .card .card-text {
   display: flex;
@@ -98,4 +110,37 @@ body .root .card .card-text .avatar .share {
   justify-content: center;
   align-items: center;
   color: #6d7f97;
+  cursor: pointer;
+  animation: animation 0.5s;
+}
+body .root .card .card-text .avatar .share.active {
+  background-color: #48556a;
+  color: #ffffff;
+}
+body .root .card .card-text .card-social {
+  height: 55px;
+  width: 248px;
+  background-color: #48556a;
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  display: none;
+  animation: animation 0.5s;
+}
+body .root .card .card-text .card-social .square {
+  height: 25px;
+  width: 25px;
+  background-color: #48556a;
+  position: absolute;
+  bottom: -23%;
+  right: 47%;
+  transform: rotate(45deg);
+  outline: none;
+}
+body .root .card .card-text .card-social .square:active {
+  background-color: transparent;
+  outline: none;
+}
+body .root .card .card-text .card-social.active {
+  display: block;
 }

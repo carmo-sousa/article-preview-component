@@ -1,5 +1,14 @@
 @import "base";
 
+@keyframes animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: $LightGrayishBlue;
 
@@ -15,15 +24,21 @@ body {
       height: 280px;
       background-color: #ffffff;
       border-radius: 10px;
-      overflow: hidden;
+      // overflow: hidden;
       box-shadow: 4px 4px 50px rgba($color: #000000, $alpha: 0.1);
       display: grid;
       grid-template-columns: 285px 1fr;
+      position: relative;
 
       .card-image {
         width: 285px;
-        height: 280px;
+        height: 100%;
         grid-area: "image";
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .card-text {
@@ -89,7 +104,45 @@ body {
             justify-content: center;
             align-items: center;
             color: $DesaturatedDarkBlue;
+            cursor: pointer;
+            animation: animation 0.5s;
           }
+
+          .share.active {
+              background-color: $veryDarkGrayishBue;
+              color: #ffffff;
+            }
+        }
+
+        .card-social {
+          height: 55px;
+          width: 248px;
+          background-color: $veryDarkGrayishBue;
+          position: absolute;
+          top: 50%;
+          right: -10%;
+          display: none;
+          animation: animation 0.5s;
+
+          .square {
+            height: 25px;
+            width: 25px;
+            background-color: $veryDarkGrayishBue;
+            position: absolute;
+            bottom: -23%;
+            right: 47%;
+            transform: rotate(45deg);
+            outline: none;
+
+            &:active {
+              background-color: transparent;
+              outline: none;
+            }
+          }
+        }
+
+        .card-social.active {
+          display: block;
         }
       }
     }
