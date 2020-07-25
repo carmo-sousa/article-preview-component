@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #ecf2f8;
+}
+body .root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+body .root .card {
+  width: 731px;
+  height: 280px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 285px 1fr;
+}
+body .root .card .card-image {
+  width: 285px;
+  height: 280px;
+  grid-area: "image";
+}
+body .root .card .card-text {
+  display: flex;
+  flex-direction: column;
+  grid-area: "text";
+  padding: 31px 40px;
+  background-color: #ffffff;
+}
+body .root .card .card-text .title {
+  color: #6d7f97;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 1em;
+}
+body .root .card .card-text .text {
+  color: #9eafc2;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+body .root .card .card-text .avatar {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+body .root .card .card-text .avatar .image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+body .root .card .card-text .avatar .info {
+  margin-left: 10px;
+  color: #6d7f97;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+body .root .card .card-text .avatar .info .name {
+  color: #48556a;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+body .root .card .card-text .avatar .info .date {
+  letter-spacing: 0.01em;
+}
+body .root .card .card-text .avatar .share {
+  width: 30px;
+  height: 30px;
+  background-color: #ecf2f8;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6d7f97;
+}
