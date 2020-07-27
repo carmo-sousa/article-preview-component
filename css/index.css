@@ -22,45 +22,46 @@ body {
   background-color: #ecf2f8;
 }
 body .root {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  display: flex;
   height: 100%;
+  justify-content: center;
+  width: 100%;
 }
 body .root .card {
-  width: 731px;
-  height: 280px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 285px 1fr;
+  height: 280px;
+  overflow: hidden;
   position: relative;
+  width: 731px;
 }
 body .root .card .card-image {
-  width: 285px;
-  height: 100%;
   grid-area: "image";
+  height: 100%;
+  width: 285px;
 }
 body .root .card .card-image img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 body .root .card .card-text {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   grid-area: "text";
   padding: 31px 40px;
-  background-color: #ffffff;
 }
 body .root .card .card-text .title {
+  letter-spacing: 0.06em;
+  margin-bottom: 1em;
   color: #6d7f97;
   font-family: "Manrope", sans-serif;
   font-size: 19px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-bottom: 1em;
 }
 body .root .card .card-text .text {
   color: #9eafc2;
@@ -69,18 +70,18 @@ body .root .card .card-text .text {
   font-weight: 500;
 }
 body .root .card .card-text .avatar {
-  margin-top: 30px;
-  width: 100%;
-  height: 100%;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 100%;
+  margin-top: 30px;
   position: relative;
+  width: 100%;
 }
 body .root .card .card-text .avatar .image img {
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 body .root .card .card-text .avatar .info {
   margin-left: 10px;
@@ -100,47 +101,64 @@ body .root .card .card-text .avatar .info .date {
   letter-spacing: 0.01em;
 }
 body .root .card .card-text .avatar .share {
-  width: 30px;
-  height: 30px;
+  align-items: center;
+  animation: animation 0.5s;
   background-color: #ecf2f8;
   border-radius: 50%;
-  position: absolute;
-  right: 0px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: #6d7f97;
   cursor: pointer;
-  animation: animation 0.5s;
+  height: 30px;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  width: 30px;
 }
 body .root .card .card-text .avatar .share.active {
   background-color: #48556a;
   color: #ffffff;
 }
 body .root .card .card-text .card-social {
-  height: 55px;
-  width: 248px;
-  background-color: #48556a;
-  position: absolute;
-  top: 50%;
-  right: -10%;
-  display: none;
+  align-items: center;
   animation: animation 0.5s;
+  background-color: #48556a;
+  border-radius: 10px;
+  display: none;
+  height: 55px;
+  justify-content: space-between;
+  padding: 0 25px;
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  width: 248px;
 }
 body .root .card .card-text .card-social .square {
-  height: 25px;
-  width: 25px;
   background-color: #48556a;
-  position: absolute;
   bottom: -23%;
+  height: 25px;
+  position: absolute;
+  outline: none;
   right: 47%;
   transform: rotate(45deg);
-  outline: none;
+  width: 25px;
 }
 body .root .card .card-text .card-social .square:active {
   background-color: transparent;
   outline: none;
 }
+body .root .card .card-text .card-social .text {
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #6d7f97;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+body .root .card .card-text .card-social .fab {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+}
 body .root .card .card-text .card-social.active {
-  display: block;
+  display: flex;
 }

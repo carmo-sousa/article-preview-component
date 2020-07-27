@@ -13,45 +13,46 @@ body {
   background-color: $LightGrayishBlue;
 
   .root {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    display: flex;
     height: 100%;
+    justify-content: center;
+    width: 100%;
 
     .card {
-      width: 731px;
-      height: 280px;
       background-color: #ffffff;
       border-radius: 10px;
-      // overflow: hidden;
-      box-shadow: 4px 4px 50px rgba($color: #000000, $alpha: 0.1);
+      box-shadow: 4px 4px 30px rgba($color: #000000, $alpha: 0.1);
       display: grid;
       grid-template-columns: 285px 1fr;
+      height: 280px;
+      overflow: hidden;
       position: relative;
+      width: 731px;
 
       .card-image {
-        width: 285px;
-        height: 100%;
         grid-area: "image";
+        height: 100%;
+        width: 285px;
 
         img {
-          width: 100%;
           height: 100%;
+          width: 100%;
         }
       }
 
       .card-text {
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         grid-area: "text";
         padding: 31px 40px;
-        background-color: #ffffff;
 
         .title {
-          @include font($size: 19px, $weight: 700);
           letter-spacing: 0.06em;
           margin-bottom: 1em;
+          
+          @include font($size: 19px, $weight: 700);
         }
 
         .text {
@@ -59,19 +60,19 @@ body {
         }
 
         .avatar {
-          margin-top: 30px;
-          width: 100%;
-          height: 100%;
+          align-items: center;
           display: flex;
           flex-direction: row;
-          align-items: center;
+          height: 100%;
+          margin-top: 30px;
           position: relative;
+          width: 100%;
 
           .image {
             img {
-              width: 40px;
-              height: 40px;
               border-radius: 50%;
+              height: 40px;
+              width: 40px;
             }
           }
 
@@ -94,55 +95,71 @@ body {
           }
 
           .share {
-            width: 30px;
-            height: 30px;
+            align-items: center;
+            animation: animation 0.5s;
             background-color: $LightGrayishBlue;
             border-radius: 50%;
-            position: absolute;
-            right: 0px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             color: $DesaturatedDarkBlue;
             cursor: pointer;
-            animation: animation 0.5s;
+            height: 30px;
+            justify-content: center;
+            position: absolute;
+            right: 0px;
+            width: 30px;
           }
 
           .share.active {
-              background-color: $veryDarkGrayishBue;
-              color: #ffffff;
-            }
+            background-color: $veryDarkGrayishBue;
+            color: #ffffff;
+          }
         }
 
         .card-social {
-          height: 55px;
-          width: 248px;
-          background-color: $veryDarkGrayishBue;
-          position: absolute;
-          top: 50%;
-          right: -10%;
-          display: none;
+          align-items: center;
           animation: animation 0.5s;
+          background-color: $veryDarkGrayishBue;
+          border-radius: 10px;
+          display: none;
+          height: 55px;
+          justify-content: space-between;
+          padding: 0 25px;
+          position: absolute;
+          right: -10%;
+          top: 50%;
+          width: 248px;
 
           .square {
-            height: 25px;
-            width: 25px;
             background-color: $veryDarkGrayishBue;
-            position: absolute;
             bottom: -23%;
+            height: 25px;
+            position: absolute;
+            outline: none;
             right: 47%;
             transform: rotate(45deg);
-            outline: none;
+            width: 25px;
 
             &:active {
               background-color: transparent;
               outline: none;
             }
           }
+
+          .text {
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            @include font($size: 19px);
+          }
+
+          .fab {
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+          }
         }
 
         .card-social.active {
-          display: block;
+          display: flex;
         }
       }
     }
