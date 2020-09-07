@@ -1,0 +1,56 @@
+.card {
+  background-color: red;
+  display: grid;
+  grid-template:
+    "header main"
+    "header footer";
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr;
+  width: 80%;
+}
+
+.card__image {
+  background-color: blue;
+  grid-area: header;
+  width: 100%;
+}
+
+.card__text {
+  background-color: yellow;
+  grid-area: main;
+}
+
+.card__author {
+  background-color: violet;
+  display: grid;
+  grid-template: "info share";
+  grid-template-columns: 1fr 1fr;
+  grid-area: footer;
+}
+
+.card__info {
+  background-color: aqua;
+  display: grid;
+  grid-area: info;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template:
+    "avatar name"
+    "avatar publish";
+}
+
+.card__avatar {
+  grid-area: avatar;
+}
+
+.card__name {
+  grid-area: name;
+}
+
+.card__publish {
+  grid-area: publish;
+}
+
+.card__share {
+  grid-area: share;
+}

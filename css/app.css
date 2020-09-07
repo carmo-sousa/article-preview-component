@@ -1,12 +1,66 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
 }
 
 .content {
-  background-color: #48556a;
+  background-color: #ecf2f8;
+  height: 100%;
+  width: 100%;
 }
 
-/*# sourceMappingURL=app.css.map */
+.card {
+  background-color: red;
+  display: grid;
+  grid-template: "header main" "header footer";
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr;
+  width: 80%;
+}
+
+.card__image {
+  background-color: blue;
+  grid-area: header;
+  width: 100%;
+}
+
+.card__text {
+  background-color: yellow;
+  grid-area: main;
+}
+
+.card__author {
+  background-color: violet;
+  display: grid;
+  grid-template: "info share";
+  grid-template-columns: 1fr 1fr;
+  grid-area: footer;
+}
+
+.card__info {
+  background-color: aqua;
+  display: grid;
+  grid-area: info;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template: "avatar name" "avatar publish";
+}
+
+.card__avatar {
+  grid-area: avatar;
+}
+
+.card__name {
+  grid-area: name;
+}
+
+.card__publish {
+  grid-area: publish;
+}
+
+.card__share {
+  grid-area: share;
+}
